@@ -4,8 +4,7 @@ use Atlas\Broadcaster\Events;
 
 $events = new Events();
 
-$events->emit("update", function() {
-    return "Hello";
-});
+// Emit a Hello
+$events->emit("update", fn() => "Hello");
 
 return "Hello" === $events->listener("update");

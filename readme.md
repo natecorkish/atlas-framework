@@ -37,9 +37,7 @@ $collection->each(function ($item) {
 #### Events
 
 ```phpt
-$events->emit("update", function() {
-    return "Hello";
-});
+$events->emit("update", fn() => "Hello");
 
 return "Hello" === $events->listener("update");
 ```
