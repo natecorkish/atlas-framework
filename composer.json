@@ -1,0 +1,21 @@
+{
+    "name": "natecorkish/framework",
+    "description": "A simple framework for rapid development",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nate Corkish",
+            "email": "natecorkish@redacted.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Atlas\\": "src/"
+        }
+    }
+}
