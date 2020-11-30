@@ -17,4 +17,6 @@ $filtered = $collection->filter(function ($item) {
 		return $item["active"];
 });
 
-var_dump($filtered->first());
+$collection->each(function($item) {
+		echo $item;
+});

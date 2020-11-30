@@ -55,6 +55,12 @@ class Collection {
         return $this;
     }
 
+		public function each(closure $closure) {
+    		foreach($this->filtered as $item) {
+    				$closure($item);
+				}
+		}
+
     /**
      * Return the first item in the collection
      *
