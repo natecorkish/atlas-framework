@@ -13,9 +13,13 @@ $collection->collect([
     ["name" => "Jayne Anon", "active" => false],
 ]);
 
+// Filter the collection
 $filtered = $collection->filter(fn($item) => $item["active"]);
 
-
-$collection->each(function ($item) {
-    echo $item["name"] . PHP_EOL;
+// Modify the collection
+$modified = $filtered->map(function ($item) {
+    $item["name"] = strtolower($item["name"]);
+    return $item;
 });
+
+var_dump($modified->collection());

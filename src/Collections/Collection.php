@@ -4,6 +4,7 @@ namespace Atlas\Collections;
 
 use Closure;
 use function reset;
+use function var_dump;
 
 class Collection {
 
@@ -27,7 +28,7 @@ class Collection {
      * @return array
      */
     public function collection(): array {
-        return $this->collection;
+        return $this->filtered;
     }
 
     /**
@@ -39,6 +40,7 @@ class Collection {
      */
     public function collect(array $collection): self {
         $this->collection = $collection;
+        $this->filtered = $collection;
 
         return $this;
     }
@@ -51,6 +53,18 @@ class Collection {
      */
     public function filter(callable $action): self {
         $this->filtered = array_filter($this->collection, $action);
+
+        return $this;
+    }
+
+    /**
+     * Map the collection
+     *
+     * @param callable $action
+     * @return $this
+     */
+    public function map(callable $action): self {
+        $this->filtered = array_map($action, $this->filtered);
 
         return $this;
     }

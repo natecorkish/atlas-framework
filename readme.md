@@ -31,6 +31,12 @@ $filtered = $collection->filter(fn($item) => $item["active"]);
 $collection->each(function ($item) {
     echo $item["name"] . PHP_EOL;
 });
+
+// Modify the collection
+$modified = $filtered->map(function ($item) {
+    $item["name"] = strtolower($item["name"]);
+    return $item;
+});
 ```
 
 

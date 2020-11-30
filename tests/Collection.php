@@ -15,6 +15,7 @@ $collection->collect([
 // Filter accounts by active status
 $filtered = $collection->filter(fn($item) => $item["active"]);
 
+var_dump($filtered);
 // Get the first item of a filtered array
 ["name" => "John Doe", "active" => true] === $filtered->first();
 
