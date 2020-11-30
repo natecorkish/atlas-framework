@@ -12,12 +12,14 @@ $collection->collect([
     ["name" => "Jayne Anon", "active" => false],
 ]);
 
-$filtered = $collection->filter(function ($item) {
-    return $item["active"];
-});
+// Filter accounts by active status
+$filtered = $collection->filter(fn($item) => $item["active"]);
 
 // Get the first item of a filtered array
 ["name" => "John Doe", "active" => true] === $filtered->first();
+
+// Get the last item of a filtered array
+["name" => "John Smith", "active" => true] === $filtered->last();
 
 // Loop through collection
 $collection->each(function ($item) {

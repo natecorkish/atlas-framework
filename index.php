@@ -13,9 +13,8 @@ $collection->collect([
     ["name" => "Jayne Anon", "active" => false],
 ]);
 
-$filtered = $collection->filter(function ($item) {
-    return $item["active"];
-});
+$filtered = $collection->filter(fn($item) => $item["active"]);
+
 
 $collection->each(function ($item) {
     echo $item["name"] . PHP_EOL;

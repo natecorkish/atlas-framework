@@ -19,9 +19,7 @@ $collection->collect([
 ]);
 
 // Filter inactive accounts
-$filtered = $collection->filter(function ($item) {
-    return $item["active"];
-});
+$filtered = $collection->filter(fn($item) => $item["active"]);
 
 // Get the first item of a filtered array
 ["name" => "John Doe", "active" => true] === $filtered->first();
