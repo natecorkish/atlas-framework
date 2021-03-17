@@ -2,10 +2,6 @@
 
 namespace Atlas\Collections;
 
-use Closure;
-use function reset;
-use function var_dump;
-
 class Collection {
 
     /*------------------------------------------------------------

@@ -2,9 +2,6 @@
 
 namespace Atlas\Broadcaster;
 
-use Error;
-use Closure;
-
 class Events
 {
     /*------------------------------------------------------------
